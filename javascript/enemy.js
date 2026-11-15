@@ -5,9 +5,14 @@ class Enemy {
 
     this.y = 0;
     this.x = Math.floor(Math.random() * 800);
-    this.width = 150;
-    this.height = 150;
-    this.image = "./images/enemy_saucer.png";
+    this.width = 50;
+    this.height = 50;
+    const images = [
+      "./images/enemy_saucer.png",
+      "./images/enemy_fighter.png",
+      "./images/enemy_mothership.png",
+    ];
+    this.image = images[Math.floor(Math.random() * images.length)];
 
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
@@ -22,7 +27,7 @@ class Enemy {
   }
 
   move() {
-    this.y += 5;
+    this.y += 3;
     this.element.style.top = `${this.y}px`;
   }
 }

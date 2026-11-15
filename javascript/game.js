@@ -15,7 +15,7 @@ class Game {
     this.honey = new Honey();
 
     this.enemyInterval = setInterval(() => {
-      this.spawnEnemy;
+      this.spawnEnemy();
     }, 1000);
     this.movementInterval = setInterval(() => {
       this.enemies.forEach((enemy) => enemy.move());
