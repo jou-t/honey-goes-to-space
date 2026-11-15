@@ -4,7 +4,7 @@ class Honey {
     this.element = document.createElement("div");
 
     this.x = 600;
-    this.y = 440;
+    this.y = 530;
     this.width = 150;
     this.height = 150;
     this.image = "./images/honey transparent.png";
@@ -29,7 +29,7 @@ class Honey {
   }
 
   moveRight() {
-    if (this.x <= 1000) {
+    if (this.x <= 800) {
       this.x += 12;
       this.element.style.left = `${this.x}px`;
     }
