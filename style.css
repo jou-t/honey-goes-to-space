@@ -8,17 +8,20 @@ h1 {
   font-family: Georgia, "Times New Roman", Times, serif;
   padding-bottom: 32px;
   justify-content: center;
+  color: ##f0e6fb;
 }
 
 h2 {
   font-family: Arial, Helvetica, sans-serif;
   padding-bottom: 12px;
+  color: ##f0e6fb;
 }
 
 p {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
   padding-bottom: 32px;
+  color: #f0e6fb;
 }
 
 body {
@@ -28,9 +31,16 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url("./images/space_background.png");
-  background-size: cover;
-  background-position: center;
+  background-image:
+    url("./images/bg_layer3_near.png"), url("./images/bg_layer2_planets.png"),
+    url("./images/bg_layer1_sky.png");
+  background-size: cover, cover, cover;
+  background-position: center, center, center;
+  background-repeat: no-repeat;
+}
+
+li {
+  color: ##f0e6fb;
 }
 
 .scream {

@@ -12,6 +12,14 @@ window.addEventListener("load", () => {
   });
   document.addEventListener("keydown", (e) => {
     console.log(e.key);
+
+    if (e.key === "ArrowUp") {
+      game.honey.moveUp();
+    }
+
+    if (e.key === "ArrowDown") {
+      game.honey.moveDown();
+    }
     if (e.key === "ArrowLeft") {
       game.honey.moveLeft();
     }

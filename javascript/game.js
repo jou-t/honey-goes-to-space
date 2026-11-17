@@ -7,6 +7,7 @@ class Game {
     this.enemies = [];
     this.enemyInterval = null;
     this.movementInterval = null;
+    this.lives = 3;
   }
 
   startGame() {
@@ -17,12 +18,34 @@ class Game {
     this.enemyInterval = setInterval(() => {
       this.spawnEnemy();
     }, 1000);
+
     this.movementInterval = setInterval(() => {
       this.enemies.forEach((enemy) => enemy.move());
-    }, 30);
+      this.enemies.forEach((enemy, i) => {
+        if (enemy.y >= 630) {
+          this.enemies.splice(i, 1);
+          enemy.element.remove();
+        }
+        enemy.move();
+        this.checkCollision(this.honey, enemy, i);
+      });
+    }, 80);
   }
-  animate() {}
+
   spawnEnemy() {
     this.enemies.push(new Enemy());
+  }
+
+  checkCollision(honey, enemy, enemyIndex) {
+    if (
+      honey.x < enemy.x + enemy.width &&
+      honey.x + honey.width > enemy.x &&
+      honey.y < enemy.y + enemy.height &&
+      honey.y + honey.height > enemy.y
+    ) {
+      this.enemies.splice(enemyIndex, 1);
+      enemy.element.remove();
+      return true;
+    }
   }
 }

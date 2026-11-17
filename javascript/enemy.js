@@ -7,10 +7,12 @@ class Enemy {
     this.x = Math.floor(Math.random() * 800);
     this.width = 50;
     this.height = 50;
+
     const images = [
       "./images/enemy_saucer.png",
       "./images/enemy_fighter.png",
       "./images/enemy_mothership.png",
+      "./images/pickup_biscuit.png",
     ];
     this.image = images[Math.floor(Math.random() * images.length)];
 
@@ -27,7 +29,7 @@ class Enemy {
   }
 
   move() {
-    this.y += 3;
+    this.y += 5;
     this.element.style.top = `${this.y}px`;
   }
 }
