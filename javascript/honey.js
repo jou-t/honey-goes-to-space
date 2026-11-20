@@ -6,7 +6,7 @@ class Honey {
     this.x = 300;
     this.y = 350;
     this.width = 150;
-    this.height = 150;
+    this.height = 165;
     this.image = "./images/honey transparent.png";
 
     this.element.style.position = "absolute";

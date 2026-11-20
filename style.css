@@ -9,12 +9,15 @@ h1 {
   padding-bottom: 32px;
   justify-content: center;
   color: ##f0e6fb;
+  font-size: 120px;
+  color: rgb(248, 212, 5);
 }
 
 h2 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   padding-bottom: 12px;
   color: ##f0e6fb;
+  color: rgb(248, 212, 5);
 }
 
 p {
@@ -36,10 +39,23 @@ body {
   background-size: cover, cover, cover;
   background-position: center, center, center;
   background-repeat: no-repeat;
+  animation: slide-layers 5s ease-in-out infinite alternate;
+}
+
+@keyframes slide-layers {
+  from {
+    background-position: center, center, center;
+  }
+  to {
+    background-position:
+      calc(50% + 100px) center,
+      calc(50% - 100px) center,
+      center;
+  }
 }
 
 li {
-  color: ##f0e6fb;
+  color: #f0e6fb;
 }
 
 .scream {
@@ -62,16 +78,18 @@ li {
 .start-btn {
   background-color: rgb(248, 152, 214);
   border: none;
+  font-weight: bold;
   border-radius: 4px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 8px;
   padding-bottom: 8px;
   color: black;
+  font-size: 16px;
 }
 
 .start-btn:hover {
-  background-color: rgb(252, 160, 220);
+  background-color: rgb(251, 172, 224);
 }
 
 .welcome-layout {
@@ -98,7 +116,7 @@ li {
   position: relative;
   background-color: rgb(55, 1, 105, 0.5);
   border-radius: 12px;
-  width: 50vw;
+  width: 55vw;
   height: 80vh;
 }
 
@@ -114,14 +132,6 @@ li {
   padding-right: 40px;
 }
 
-.game-over {
-  background-color: rgb(64, 2, 122);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  justify-content: center;
-  font-weight: bold;
-  color: rgb(248, 212, 5);
-}
-
 .game-screen,
 .end-screen {
   display: none;
@@ -133,6 +143,8 @@ li {
 
 .play-again-btn {
   width: 200px;
+  font-size: 16px;
+  font-weight: bold;
   background-color: rgb(248, 152, 214);
   border: none;
   border-radius: 4px;
@@ -141,4 +153,18 @@ li {
   padding-top: 8px;
   padding-bottom: 8px;
   color: black;
+}
+
+.play-again-btn:hover {
+  background-color: rgb(251, 172, 224);
+}
+
+.lives {
+  padding-left: 12px;
+  padding-top: 12px;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 40px;
+  height: 40px;
 }

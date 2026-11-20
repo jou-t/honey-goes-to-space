@@ -2,6 +2,7 @@ const welcomeScreen = document.querySelector(".welcome-screen");
 const gameScreen = document.querySelector(".game-screen");
 const endScreen = document.querySelector(".end-screen");
 const startButton = document.querySelector(".start-btn");
+const playAgainButton = document.querySelector(".play-again-btn");
 
 let game;
 
@@ -10,6 +11,12 @@ window.addEventListener("load", () => {
     game = new Game();
     game.startGame();
   });
+
+  playAgainButton.addEventListener("click", () => {
+    game = new Game();
+    game.startGame();
+  });
+
   document.addEventListener("keydown", (e) => {
     console.log(e.key);
 

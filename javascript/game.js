@@ -6,7 +6,7 @@ class Game {
     this.honey = null;
     this.enemies = [];
     this.enemyInterval = null;
-    this.lifeContainer = document.querySelector(".life");
+    this.lifeContainer = document.querySelector(".lives");
     this.movementInterval = null;
     this.lives = 3;
   }
@@ -49,7 +49,8 @@ class Game {
       enemy.element.remove();
 
       this.lives -= 1;
-      this.lifeContainer.textContent = this.lives;
+      const hearts = this.lifeContainer.querySelectorAll("img");
+      hearts[this.lives].hidden = true;
       if (this.lives <= 0) {
         clearInterval(this.enemyInterval);
         clearInterval(this.movementInterval);
