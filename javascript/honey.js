@@ -23,29 +23,30 @@ class Honey {
 
   moveUp() {
     if (this.y >= 0) {
-      this.y -= 5;
-      this.element.style.top = `${this.y}px`;
+      this.y -= 16;
     }
   }
 
   moveDown() {
-    if (this.y >= 530) {
-      this.y += 5;
-      this.element.style.top = `${this.y}px`;
+    if (this.y <= 530) {
+      this.y += 16;
     }
   }
 
   moveLeft() {
     if (this.x >= 10) {
-      this.x -= 5;
-      this.element.style.left = `${this.x}px`;
+      this.x -= 16;
     }
   }
 
   moveRight() {
     if (this.x <= 800) {
-      this.x += 5;
-      this.element.style.left = `${this.x}px`;
+      this.x += 16;
     }
+  }
+
+  drawHoney() {
+    this.element.style.left = `${this.x}px`;
+    this.element.style.top = `${this.y}px`;
   }
 }

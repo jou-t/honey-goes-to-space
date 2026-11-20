@@ -6,6 +6,7 @@ class Game {
     this.honey = null;
     this.enemies = [];
     this.enemyInterval = null;
+    this.lifeContainer = document.querySelector(".life");
     this.movementInterval = null;
     this.lives = 3;
   }
@@ -26,10 +27,11 @@ class Game {
           this.enemies.splice(i, 1);
           enemy.element.remove();
         }
+        this.honey.drawHoney();
         enemy.move();
         this.checkCollision(this.honey, enemy, i);
       });
-    }, 80);
+    }, 14);
   }
 
   spawnEnemy() {
@@ -45,7 +47,19 @@ class Game {
     ) {
       this.enemies.splice(enemyIndex, 1);
       enemy.element.remove();
-      return true;
+
+      this.lives -= 1;
+      this.lifeContainer.textContent = this.lives;
+      if (this.lives <= 0) {
+        clearInterval(this.enemyInterval);
+        clearInterval(this.movementInterval);
+        this.gameOver();
+      }
     }
+  }
+
+  gameOver() {
+    this.gameScreen.style.display = "none";
+    this.endScreen.style.display = "flex";
   }
 }

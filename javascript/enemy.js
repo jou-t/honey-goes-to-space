@@ -12,7 +12,6 @@ class Enemy {
       "./images/enemy_saucer.png",
       "./images/enemy_fighter.png",
       "./images/enemy_mothership.png",
-      "./images/pickup_biscuit.png",
     ];
     this.image = images[Math.floor(Math.random() * images.length)];
 
@@ -29,7 +28,7 @@ class Enemy {
   }
 
   move() {
-    this.y += 5;
+    this.y += 1;
     this.element.style.top = `${this.y}px`;
   }
 }
