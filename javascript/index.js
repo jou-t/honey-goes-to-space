@@ -13,8 +13,11 @@ window.addEventListener("load", () => {
   });
 
   playAgainButton.addEventListener("click", () => {
+    game.resetGame();
     game = new Game();
     game.startGame();
+    endScreen.style.display = "none";
+    gameScreen.style.display = "block";
   });
 
   document.addEventListener("keydown", (e) => {

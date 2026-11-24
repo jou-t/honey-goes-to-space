@@ -18,6 +18,8 @@ class Honey {
     this.element.style.backgroundPosition = "center";
     this.element.style.backgroundSize = "cover";
 
+    this.element.style.animation = "honey-float 2s ease-in-out infinite";
+
     this.gameScreen.appendChild(this.element);
   }
 

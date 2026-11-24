@@ -63,4 +63,12 @@ class Game {
     this.gameScreen.style.display = "none";
     this.endScreen.style.display = "flex";
   }
+
+  resetGame() {
+    this.honey.element.remove();
+    this.enemies.forEach((enemy) => enemy.element.remove());
+    this.enemies = [];
+    const hearts = this.lifeContainer.querySelectorAll("img");
+    hearts.forEach((heart) => (heart.hidden = false));
+  }
 }
